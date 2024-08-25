@@ -1,0 +1,41 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{github.workflow}}-${{github.head_ref || github.run_id}}
+  cancel-in-progress: true
+
+jobs:
+  lint-test:
+    name: Lint and Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['18.x', '20.x']
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        working-directory: ./
+        run: npm ci
+
+      - name: Lint
+        working-directory: ./
+        run: npm run lint
+
+      - name: Test
+        working-directory: ./
+        run: npm run test

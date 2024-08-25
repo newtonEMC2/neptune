@@ -1,0 +1,58 @@
+{
+  "name": "@newtonemc2/neptune",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=18.0.0 <20.x.x"
+  },
+  "license": "MIT",
+  "description": "Simple global store manager.",
+  "repository": "https://github.com/newtonEMC2/neptune",
+  "keywords": [
+    "neptune",
+    "store",
+    "manager",
+    "state",
+    "global"
+  ],
+  "author": "Alexis Corbacho <corbacho.golmar.alexis@gmail.com>",
+  "main": "dist/neptune.umd.js",
+  "module": "dist/neptune.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "prettier src --check && tsc --noEmit --project ./tsconfig.json",
+    "format": "prettier --write .",
+    "test": "jest --config ./jest.config.ts",
+    "test:watch": "npm test -- --watch"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/react": "^16.0.0",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.3.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "globals": "^15.9.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.0",
+    "vite-plugin-dts": "^4.0.2"
+  }
+}
