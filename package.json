@@ -1,5 +1,5 @@
 {
-  "name": "@newtonemc2/neptune",
+  "name": "@newton_emc2/neptune",
   "version": "1.0.0",
   "engines": {
     "node": ">=18.0.0 <20.x.x"
