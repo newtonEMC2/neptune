@@ -27,13 +27,13 @@ Do not use this package if u need:
 ## Instalation
 
 ```
-npm i <package-name>
+npm i @newton_emc2/neptune
 ```
 
 ## Usage
 
 ```
-import { StoreReactWrapper } from '@newtonemc2/neptune'
+import { StoreReactWrapper } from '@newton_emc2/neptune'
 
 interface User {
   name: string
